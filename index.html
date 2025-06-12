@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Rewind...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background: black;
       color: white;
       font-family: 'Courier New', monospace;
       text-align: center;
-      padding-top: 25vh;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 8vw; /* Scales well on phones, but not too big */
       text-shadow: 0 0 5px #fff;
       animation: glitch 1.2s infinite;
+      line-height: 1.4;
+      margin: 0;
     }
 
     @keyframes glitch {
@@ -25,14 +34,14 @@
     }
 
     .rewind {
-      margin-top: 40px;
-      font-size: 1.2rem;
-      opacity: 0.6;
+      margin-top: 24px;
+      font-size: 5vw; /* Still bold enough but not overpowering */
+      opacity: 0.75;
     }
   </style>
 </head>
 <body>
-  <h1>STAY TUNED <br>SHEHATA...</h1>
+  <h1>HI FROM<br>SHEHATA...</h1>
   <div class="rewind">||◄◄ LOADING</div>
 </body>
 </html>
