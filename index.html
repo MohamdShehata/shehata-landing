@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rewind...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>The Future Awaits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       background: black;
-      color: white;
-      font-family: 'Courier New', monospace;
-      text-align: center;
+      color: rgb(146, 86, 9);
+      font-family: monospace;
+      padding: 20px;
       margin: 0;
-      height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 0 20px;
+      justify-content: center;
+      min-height: 100vh;
     }
 
-    h1 {
-      font-size: 8vw; /* Scales well on phones, but not too big */
-      text-shadow: 0 0 5px #fff;
-      animation: glitch 1.2s infinite;
-      line-height: 1.4;
-      margin: 0;
+    #console {
+      font-size: 4.5vw; /* scales with screen size */
+      max-width: 600px;
+      line-height: 1.6;
+      white-space: pre-wrap;
     }
 
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      100% { text-shadow: 2px 0 red, -2px 0 cyan; }
-    }
-
-    .rewind {
-      margin-top: 24px;
-      font-size: 5vw; /* Still bold enough but not overpowering */
-      opacity: 0.75;
+    @media (min-width: 768px) {
+      #console {
+        font-size: 1.2rem; /* readable on larger screens */
+      }
     }
   </style>
 </head>
 <body>
-  <h1>HI FROM<br>SHEHATA...</h1>
-  <div class="rewind">||◄◄ LOADING</div>
+  <div id="console">> Our future is loading...</div>
+
+  <script>
+    const lines = [
+      "> We choose each other — every day.",
+      "> You are never alone",
+      "> Always together.",
+      "> Even in our problems, even in the hard days — we stay",
+      "> Through every moment, every breath, every heartbeat...",
+      "> I love you endlessly, Hano ❤️",
+      "> Forever yours, even in silence. 💫"
+    ];
+    let i = 0;
+    const consoleDiv = document.getElementById('console');
+
+    function nextLine() {
+      if (i < lines.length) {
+        consoleDiv.innerText += "\n" + lines[i++];
+        setTimeout(nextLine, 2000);
+      }
+    }
+
+    setTimeout(nextLine, 1500);
+  </script>
 </body>
 </html>
